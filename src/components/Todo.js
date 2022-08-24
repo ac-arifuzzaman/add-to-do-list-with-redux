@@ -14,7 +14,7 @@ const Todo = () => {
         </svg>
       </div>
 
-      <div className="select-none flex-1 line-through">
+      <div className="select-none flex-1 ">
         Learn React from Learn with Sumit YouTube Channel
       </div>
 
