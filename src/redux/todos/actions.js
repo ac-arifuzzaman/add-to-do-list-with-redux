@@ -1,4 +1,5 @@
-import { ADDED, ALLCOMPLETED, CLEARCOMPLETED, COLORSELECTED, DELETED, TOOGLED } from "./actiontype";
+import { ADDED, ALLCOMPLETED, CLEARCOMPLETED, COLORSELECTED, DELETED, TOGGLED } from "./actiontype";
+
 
 export const added = (todoText) => {
   return {
@@ -7,14 +8,14 @@ export const added = (todoText) => {
   };
 };
 
-export const toogeld = (todoId) => {
+export const toggled = (todoId) => {
   return {
-    type: TOOGLED,
+    type: TOGGLED,
     payload: todoId,
   };
 };
 
-export const colorselected = (todoId, color) => {
+export const colorSelected = (todoId, color) => {
   return {
     type: COLORSELECTED,
     payload: {
@@ -31,13 +32,13 @@ export const deleted = (todoId) => {
   };
 };
 
-export const allcompleted = () => {
+export const allCompleted = () => {
   return {
     type: ALLCOMPLETED,
   };
 };
 
-export const clearcompleted = () => {
+export const clearCompleted = () => {
   return {
     type: CLEARCOMPLETED,
   };

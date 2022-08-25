@@ -1,39 +1,41 @@
-import { COLORCHANGED, STATASCHANGED } from "./actionTypes";
+
+import { COLORCHANGED, STATUSCHANGED } from "./actionTypes";
 import initialState from "./initalState";
 
 
-const filterReducer = (state = initialState, action) =>{
+const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case STATASCHANGED:
+    case STATUSCHANGED:
       return {
         ...state,
-        statas: action.payload
+        status: action.payload,
+      };
+
+    case COLORCHANGED:
+      const { color, changeType } = action.payload;
+
+      switch (changeType) {
+        case "added":
+          return {
+            ...state,
+            colors: [...state.colors, color],
+          };
+
+        case "removed":
+          return {
+            ...state,
+            colors: state.colors.filter(
+              (existingColor) => existingColor !== color
+            ),
+          };
+
+        default:
+          return state;
       }
 
-      case COLORCHANGED:
-        const {color,changedType} = action.payload;
-        switch (changedType) {
-          case "added":
-            return {
-              ...state,
-              color: [
-                ...state.color,
-                color 
-              ]
-            }
-
-            case "remover":
-              return {
-                ...state,
-                colors: state.colors.filter(newColor => newColor !== color)
-              }
-        
-          default:
-            return state;
-        }
     default:
       return state;
   }
-}
+};
 
-export default filterReducer;
+export default reducer;

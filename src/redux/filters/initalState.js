@@ -1,6 +1,5 @@
- const initialState = {
-  statas: "All",
-  colors: []
-}
-
-export default initialState
+const initialState = {
+  status: "All",
+  colors: [],
+};
+export default initialState;

@@ -1,14 +1,14 @@
- const initialState = [
+const initialState = [
   {
     id: 1,
-    text: "Learn React js",
-    completed: "True",
+    text: "Learn React JS",
+    completed: true,
   },
   {
     id: 2,
     text: "Learn Redux",
-    completed: "False",
-    color: "Red"
+    completed: false,
+    color: "red",
   },
 ];
 
